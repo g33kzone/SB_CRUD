@@ -17,5 +17,5 @@
         ]
     }
     ],
-	"images": ["gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA"]
+    	"images": ["gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA"]
 }

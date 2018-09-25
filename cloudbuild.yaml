@@ -17,5 +17,5 @@
         ]
     }
     ],
-	"images": ["gcr.io/k8-devops/sb_crud",]
+     "images": ["gcr.io/k8-devops/sb_crud"]
 }

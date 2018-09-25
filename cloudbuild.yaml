@@ -1,0 +1,21 @@
+{
+    "steps": [
+    {
+        "name": "gcr.io/cloud-builders/git",
+        "args": [
+            "clone",
+            "https://github.com/g33kzone/SB_CRUD.git"
+        ]
+    },
+    {
+        "name": "gcr.io/cloud-builders/docker",
+        "args": [
+            "build",
+            "-t",
+            "gcr.io/k8-devops/sb_crud",
+            "."
+        ]
+    }
+    ],
+	"images": ["gcr.io/k8-devops/sb_crud",]
+}

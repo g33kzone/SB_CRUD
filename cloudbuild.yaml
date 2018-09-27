@@ -8,12 +8,19 @@
         ]
     },
     {
-        "name": "gcr.io/cloud-builders/docker",
+        "name": "gcr.io/cloud-builders/docker-build",
         "args": [
             "build",
             "-t",
             "gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA",
             "."
+        ]
+    },
+    {
+        "name": "gcr.io/cloud-builders/docker-push",
+        "args": [
+            "push",
+            "gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA"
         ]
     }
     ],

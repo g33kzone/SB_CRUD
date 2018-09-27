@@ -1,26 +1,19 @@
 {
     "steps": [
     {
-        "name": "gcr.io/cloud-builders/git",
+        "name": "gcr.io/cloud-builders/docker",
         "args": [
             "clone",
             "https://github.com/g33kzone/SB_CRUD.git"
         ]
     },
     {
-        "name": "gcr.io/cloud-builders/docker-build",
+        "name": "gcr.io/cloud-builders/docker",
         "args": [
             "build",
             "-t",
             "gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA",
             "."
-        ]
-    },
-    {
-        "name": "gcr.io/cloud-builders/docker-push",
-        "args": [
-            "push",
-            "gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA"
         ]
     }
     ],

@@ -1,4 +1,6 @@
 steps:
-- name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA', '.']
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA', '.']
 images: ['gcr.io/k8-devops/$REPO_NAME:$COMMIT_SHA']

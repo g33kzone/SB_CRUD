@@ -16,15 +16,13 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t devops-gcr/sb_crud:latest .'
+        sh 'docker build -t gcr.io/devops-gcr/sb_crud:build-$BUILD_NUMBER .'
       }
     }
     stage('Docker Push') {
   agent any
         steps {
-          withDockerRegistry(credentialsId: 'gcr:devops-gcr') {
-            sh 'docker push gcr.io/devops-gcr/sb_crud:latest'
-          }
+            sh 'docker push gcr.io/devops-gcr/sb_crud:build-$BUILD_NUMBER'
         }
       }
     }

@@ -16,7 +16,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        app = docker.build("devops-gcr/sb_crud")
+        sh 'docker build -t devops-gcr/sb_crud:latest .'
       }
     }
     stage('Docker Push') {

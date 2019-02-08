@@ -22,7 +22,7 @@ pipeline {
     stage('Docker Push') {
       agent any
       steps {
-        docker.withRegistry('https://us.gcr.io', 'gcr:devops-gcr') {
+        docker.withRegistry('https://gcr.io', 'devops-gcr') {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
          }

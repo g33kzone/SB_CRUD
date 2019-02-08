@@ -22,7 +22,7 @@ pipeline {
     stage('Docker Push') {
   agent any
         steps {
-            sh 'docker push gcr.io/devops-gcr/sb_crud:build-$BUILD_NUMBER'
+            sh 'gcloud docker -- push gcr.io/devops-gcr/sb_crud:build-$BUILD_NUMBER'
         }
       }
     }

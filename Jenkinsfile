@@ -23,7 +23,7 @@ pipeline {
   agent any
         steps {
           withDockerRegistry(credentialsId: 'gcr:devops-gcr') {
-            sh 'docker push gcr.io/devops-gcr/sb-crud:latest'
+            sh 'docker push gcr.io/devops-gcr/sb_crud:latest'
           }
         }
       }

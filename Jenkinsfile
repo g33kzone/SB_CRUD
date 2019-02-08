@@ -20,12 +20,11 @@ pipeline {
       }
     }
     stage('Docker Push') {
-      agent any
-      steps {
-        docker.withRegistry('https://gcr.io', 'devops-gcr') {
-      app.push("${env.BUILD_NUMBER}")
-      app.push("latest")
-         }
+  agent any
+        steps {
+          withDockerRegistry(credentialsId: 'gcr:devops-gcr') {
+            sh 'docker push gcr.io/devops-gcr/sb-crud:latest'
+          }
         }
       }
     }
